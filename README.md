@@ -1,4 +1,4 @@
-# festa2
+# Festa2
 Skrypt bazy noclegów Festa2
 
 Demo skryptu: https:/festa2.itworksbetter.net/
