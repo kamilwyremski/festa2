@@ -301,7 +301,7 @@ CREATE TABLE IF NOT EXISTS `mails_queue` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `receiver` varchar(64) NOT NULL,
   `action` varchar(32) NOT NULL,
-  `data` text NOT NULL,
+  `data` LONGTEXT NOT NULL,
   `priority` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
