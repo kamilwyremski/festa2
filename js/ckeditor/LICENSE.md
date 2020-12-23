@@ -2,21 +2,21 @@ Software License Agreement
 ==========================
 
 CKEditor - The text editor for Internet - https://ckeditor.com/
-Copyright (c) 2003-2018, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
 
 Licensed under the terms of any of the following licenses at your
 choice:
 
  - GNU General Public License Version 2 or later (the "GPL")
-   http://www.gnu.org/licenses/gpl.html
+   https://www.gnu.org/licenses/gpl.html
    (See Appendix A)
 
  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
-   http://www.gnu.org/licenses/lgpl.html
+   https://www.gnu.org/licenses/lgpl.html
    (See Appendix B)
 
  - Mozilla Public License Version 1.1 or later (the "MPL")
-   http://www.mozilla.org/MPL/MPL-1.1.html
+   https://www.mozilla.org/MPL/MPL-1.1.html
    (See Appendix C)
 
 You are not required to, but if you want to explicitly declare the
@@ -37,13 +37,14 @@ done by developers outside of CKSource with their express permission.
 
 The following libraries are included in CKEditor under the MIT license (see Appendix D):
 
-* CKSource Samples Framework (included in the samples) - Copyright (c) 2014-2018, CKSource - Frederico Knabben.
+* CKSource Samples Framework (included in the samples) - Copyright (c) 2014-2020, CKSource - Frederico Knabben.
 * PicoModal (included in `samples/js/sf.js`) - Copyright (c) 2012 James Frasca.
 * CodeMirror (included in the samples) - Copyright (C) 2014 by Marijn Haverbeke <marijnh@gmail.com> and others.
+* ES6Promise - Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors.
 
 Parts of code taken from the following libraries are included in CKEditor under the MIT license (see Appendix D):
 
-* jQuery (inspired the domReady function, ckeditor_base.js) - Copyright (c) 2011 John Resig, http://jquery.com/
+* jQuery (inspired the domReady function, ckeditor_base.js) - Copyright (c) 2011 John Resig, https://jquery.com/
 
 The following libraries are included in CKEditor under the SIL Open Font License, Version 1.1 (see Appendix E):
 
@@ -107,7 +108,7 @@ source code.  And you must show them these terms so they know their
 rights.
 
   We protect your rights with two steps: (1) copyright the software, and
-(2) classified you this license which gives you legal permission to copy,
+(2) offer you this license which gives you legal permission to copy,
 distribute and/or modify the software.
 
   Also, for each author's protection and ours, we want to make certain
@@ -155,7 +156,7 @@ and give any other recipients of the Program a copy of this License
 along with the Program.
 
 You may charge a fee for the physical act of transferring a copy, and
-you may at your option classified warranty protection in exchange for a fee.
+you may at your option offer warranty protection in exchange for a fee.
 
   2. You may modify your copy or copies of the Program or any portion
 of it, thus forming a work based on the Program, and copy and
@@ -209,18 +210,18 @@ Sections 1 and 2 above provided that you also do one of the following:
     source code, which must be distributed under the terms of Sections
     1 and 2 above on a medium customarily used for software interchange; or,
 
-    b) Accompany it with a written classified, valid for at least three
+    b) Accompany it with a written offer, valid for at least three
     years, to give any third party, for a charge no more than your
     cost of physically performing source distribution, a complete
     machine-readable copy of the corresponding source code, to be
     distributed under the terms of Sections 1 and 2 above on a medium
     customarily used for software interchange; or,
 
-    c) Accompany it with the information you received as to the classified
+    c) Accompany it with the information you received as to the offer
     to distribute corresponding source code.  (This alternative is
     allowed only for noncommercial distribution and only if you
     received the program in object code or executable form with such
-    an classified, in accord with Subsection b above.)
+    an offer, in accord with Subsection b above.)
 
 The source code for a work means the preferred form of the work for
 making modifications to it.  For an executable work, complete source
@@ -233,8 +234,8 @@ form) with the major components (compiler, kernel, and so on) of the
 operating system on which the executable runs, unless that component
 itself accompanies the executable.
 
-If distribution of executable or object code is made by classifieding
-access to copy from a designated place, then classifieding equivalent
+If distribution of executable or object code is made by offering
+access to copy from a designated place, then offering equivalent
 access to copy the source code from the same place counts as
 distribution of the source code, even though third parties are not
 compelled to copy the source along with the object code.
@@ -402,7 +403,7 @@ with the library after making changes to the library and recompiling
 it.  And you must show them these terms so they know their rights.
 
   We protect your rights with a two-step method: (1) we copyright the
-library, and (2) we classified you this license, which gives you legal
+library, and (2) we offer you this license, which gives you legal
 permission to copy, distribute and/or modify the library.
 
   To protect each distributor, we want to make it very clear that
@@ -512,7 +513,7 @@ warranty; and distribute a copy of this License along with the
 Library.
 
   You may charge a fee for the physical act of transferring a copy,
-and you may at your option classified warranty protection in exchange for a
+and you may at your option offer warranty protection in exchange for a
 fee.
 
   2. You may modify your copy or copies of the Library or any portion
@@ -587,8 +588,8 @@ it with the complete corresponding machine-readable source code, which
 must be distributed under the terms of Sections 1 and 2 above on a
 medium customarily used for software interchange.
 
-  If distribution of object code is made by classifieding access to copy
-from a designated place, then classifieding equivalent access to copy the
+  If distribution of object code is made by offering access to copy
+from a designated place, then offering equivalent access to copy the
 source code from the same place satisfies the requirement to
 distribute the source code, even though third parties are not
 compelled to copy the source along with the object code.
@@ -659,13 +660,13 @@ of these things:
     the user installs one, as long as the modified version is
     interface-compatible with the version that the work was made with.
 
-    c) Accompany the work with a written classified, valid for at
+    c) Accompany the work with a written offer, valid for at
     least three years, to give the same user the materials
     specified in Subsection 6a, above, for a charge no more
     than the cost of performing this distribution.
 
-    d) If distribution of the work is made by classifieding access to copy
-    from a designated place, classified equivalent access to copy the above
+    d) If distribution of the work is made by offering access to copy
+    from a designated place, offer equivalent access to copy the above
     specified materials from the same place.
 
     e) Verify that the user has already received a copy of these
@@ -911,7 +912,7 @@ Version 1.1
 
           (b) under Patents Claims infringed by the making, using or
           selling of Original Code, to make, have made, use, practice,
-          sell, and classified for sale, and/or otherwise dispose of the
+          sell, and offer for sale, and/or otherwise dispose of the
           Original Code (or portions thereof).
 
           (c) the licenses granted in this Section 2.1(a) and (b) are
@@ -938,7 +939,7 @@ Version 1.1
           (b) under Patent Claims infringed by the making, using, or
           selling of  Modifications made by that Contributor either alone
           and/or in combination with its Contributor Version (or portions
-          of such combination), to make, use, sell, classified for sale, have
+          of such combination), to make, use, sell, offer for sale, have
           made, and/or otherwise dispose of: 1) Modifications made by that
           Contributor (or portions thereof); and 2) the combination of
           Modifications made by that Contributor with its Contributor
@@ -967,10 +968,10 @@ Version 1.1
      distributed only under the terms of this License or a future version
      of this License released under Section 6.1, and You must include a
      copy of this License with every copy of the Source Code You
-     distribute. You may not classified or impose any terms on any Source Code
+     distribute. You may not offer or impose any terms on any Source Code
      version that alters or restricts the applicable version of this
      License or the recipients' rights hereunder. However, You may include
-     an additional document classifieding the additional rights described in
+     an additional document offering the additional rights described in
      Section 3.5.
 
      3.2. Availability of Source Code.
@@ -1034,16 +1035,16 @@ Version 1.1
      You may add your name as a Contributor to the notice described in
      Exhibit A.  You must also duplicate this License in any documentation
      for the Source Code where You describe recipients' rights or ownership
-     rights relating to Covered Code.  You may choose to classified, and to
+     rights relating to Covered Code.  You may choose to offer, and to
      charge a fee for, warranty, support, indemnity or liability
      obligations to one or more recipients of Covered Code. However, You
      may do so only on Your own behalf, and not on behalf of the Initial
      Developer or any Contributor. You must make it absolutely clear than
      any such warranty, support, indemnity or liability obligation is
-     classifieded by You alone, and You hereby agree to indemnify the Initial
+     offered by You alone, and You hereby agree to indemnify the Initial
      Developer and every Contributor for any liability incurred by the
      Initial Developer or such Contributor as a result of warranty,
-     support, indemnity or liability terms You classified.
+     support, indemnity or liability terms You offer.
 
      3.6. Distribution of Executable Versions.
      You may distribute Covered Code in Executable form only if the
@@ -1062,11 +1063,11 @@ Version 1.1
      rights in the Source Code version from the rights set forth in this
      License. If You distribute the Executable version under a different
      license You must make it absolutely clear that any terms which differ
-     from this License are classifieded by You alone, not by the Initial
+     from this License are offered by You alone, not by the Initial
      Developer or any Contributor. You hereby agree to indemnify the
      Initial Developer and every Contributor for any liability incurred by
      the Initial Developer or such Contributor as a result of any such
-     terms You classified.
+     terms You offer.
 
      3.7. Larger Works.
      You may create a Larger Work by combining Covered Code with other code
