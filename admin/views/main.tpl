@@ -9,15 +9,12 @@
 	<title>{{ title }}</title>
 
 	<link rel="stylesheet" href="views/css/bootstrap.min.css">
-	<link rel="stylesheet" href="views/css/bootstrap-datepicker.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="stylesheet" href="views/css/style.css">
 	<link rel="shortcut icon" href="images/favicon.png"/>
 
 	<script src="../js/jquery-3.5.1.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-datepicker.min.js"></script>
-	<script src="js/bootstrap-datepicker.pl.min.js"></script>
 	<script src="js/ckeditor/ckeditor.js"></script>
 	<script src="js/engine_admin.js"></script>
 </head>
