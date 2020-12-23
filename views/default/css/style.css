@@ -58,6 +58,9 @@ a.main-color-2:hover{
 .google_maps_img{
 	height: 100px; margin-top: 5px;
 }
+.grecaptcha-badge { 
+	visibility: hidden; 
+}
 /* top & menu nav*/
 #top{
 	background-color: #087dc2; padding: 4px 20px; font-size: 0.8em;

@@ -109,7 +109,17 @@
                   <input type="checkbox" name="rules" class="custom-control-input" id="newsletter_rules" required {% if newsletter_input.rules %}checked{% endif %}>
                   <label class="custom-control-label" for="newsletter_rules">{{ 'Accepts the terms and conditions and the privacy policy'|trans }}</label>
                 </div>
-              </div>
+							</div>
+							<div class="form-group">
+								{% if settings.recaptcha_site_key and settings.recaptcha_secret_key %}
+									<input type="hidden" name="recaptcha_response" class="recaptchaResponse">
+									<p><small>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="nofollow">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="nofollow">Terms of Service</a> apply.</small></p>
+								{% else %}
+									<label for="newsletter_captcha">{{ 'Captcha'|trans }}</label>
+									<img src="{{ path('captcha') }}" alt="captcha">
+									<input type="text" class="form-control" placeholder="abc123" title="{{ 'Enter the captcha code'|trans }}" name="captcha" id="captcha" required maxlength="32">
+								{% endif %}
+							</div>
               <input type="submit" class="btn btn-1 text-uppercase" value="{{ 'Subscribe'|trans }}">
 				    </form>
             <br><br>
@@ -179,6 +189,20 @@
 		<script src="js/easy-autocomplete/jquery.easy-autocomplete.min.js"></script>
 		<script src="views/{{ settings.template }}/js/engine.js?{{ settings.assets_version }}"></script>
 
+		{% if settings.recaptcha_site_key and settings.recaptcha_secret_key %}
+			<script src="https://www.google.com/recaptcha/api.js?render={{ settings.recaptcha_site_key }}"></script>
+			<script>
+				grecaptcha.ready(function () {
+					grecaptcha.execute('{{ settings.recaptcha_site_key }}', { action: 'login' }).then(function (token) {
+						var elms = document.getElementsByClassName('recaptchaResponse')
+						for (var i = 0; i < elms.length; i++) {
+							elms[i].setAttribute("value", token);
+						}
+					});
+				});
+			</script>
+		{% endif %}
+		
 		<script>(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;

@@ -698,3 +698,5 @@ $translate['select'] = 'wybierz';
 $translate['show e-mail...'] = 'pokaż adres email...';
 $translate['show phone...'] = 'pokaż numer telefonu...';
 $translate['unique'] = 'unikalne';
+
+$translate['Invalid captcha code. Show that you are not robot!'] = 'Nieprawidłowa captcha. Potwierdź, że nie jesteś robotem!';

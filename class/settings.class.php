@@ -83,7 +83,7 @@ class settings {
 
 	public static function checkWordsBlackList(string $content){
 		global $settings;
-		$filtered_text = $content;
+		$filtered_text = str_replace("&nbsp;"," ",$content);
 		if($settings['black_list_words']){
 			$filter_terms = array_map('trim', array_filter(explode(',', $settings['black_list_words'])));
 			foreach($filter_terms as $word){
@@ -118,29 +118,23 @@ class settings {
 	public static function checkCaptcha(array $data){
 		global $settings;
 		if($settings['recaptcha_site_key'] and $settings['recaptcha_secret_key']){
-			$data = array(
-        'secret' => $settings['recaptcha_secret_key'],
-        'response' => $data['g-recaptcha-response']
-      );
 			$verify = curl_init();
 			curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
 			curl_setopt($verify, CURLOPT_POST, true);
-			curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+			curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query([
+				'secret' => $settings['recaptcha_secret_key'],
+				'response' => $data['recaptcha_response']
+			]));
 			curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
 			$response = json_decode(curl_exec($verify),true);
 			if($response['success'] == true){
 			  return true;
-			}else{
-				return false;
 			}
-		}else{
-			if($data['captcha']==$_SESSION['captcha']){
-				return true;
-			}else{
-				return false;
-			}
+		}elseif($data['captcha']==$_SESSION['captcha']){
+			return true;
 		}
+		return false;
 	}
 
 	public static function randomPassword() {
