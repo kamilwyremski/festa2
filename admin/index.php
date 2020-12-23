@@ -26,7 +26,7 @@ $twig = new \Twig\Environment($loader, [
 ]);
 $twig->addFilter(new \Twig\TwigFilter('trans', 'trans'));
 $twig->addFilter(new \Twig\TwigFilter('showCurrency', 'showCurrency'));
-$twig->addFunction(new \Twig\TwigFunction('path', 'absolutePath'));
+$twig->addFunction(new \Twig\TwigFunction('path', 'path'));
 $twig->addFunction(new \Twig\TwigFunction('generateToken', 'generateToken'));
 
 $admin = new admin();
