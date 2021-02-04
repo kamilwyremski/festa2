@@ -33,9 +33,6 @@
 	{{ settings.code_head|raw }}
 </head>
 <body>
-	<div id="top" class="container-fluid">
-		<p class="text-right small text-white mb-0">FESTA 2.1</p>
-	</div>
 	<nav class="navbar fixed-top navbar-expand-md navbar-light" id="menu_box">
 		<a class="navbar-brand" href="{{ settings.base_url }}" title="{{ settings.title }}">{% if settings.logo %}<img src="{{ settings.logo }}" alt="{{ settings.title }}">{% else %}{{ settings.title }}{% endif %}</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -137,8 +134,8 @@
 							<li><a class="main-color-2" href="{{ path('classifieds') }}" title="{{ 'Search the best classifieds'|trans }}">{{ 'Classifieds'|trans }}</a></li>
 							<li><a class="main-color-2" href="{{ path('my_classifieds') }}" title="{{ 'My classifieds'|trans }}">{{ 'My classifieds'|trans }}</a></li>
 							<li><a class="main-color-2" href="{{ path('login') }}" title="{{ 'Log in on the website'|trans }}">{{ 'Log in'|trans }}</a></li>
-			   			<li><a class="main-color-2" href="{{ path('rules') }}" title="{{ 'Terms of service'|trans }}">{{ 'Terms of service'|trans }}</a><li>
-			        <li><a class="main-color-2" href="{{ path('privacy_policy') }}" title="{{ 'Privacy policy'|trans }}">{{ 'Privacy policy'|trans }}</a></li>
+							<li><a class="main-color-2" href="{{ path('rules') }}" title="{{ 'Terms of service'|trans }}">{{ 'Terms of service'|trans }}</a></li>
+							<li><a class="main-color-2" href="{{ path('privacy_policy') }}" title="{{ 'Privacy policy'|trans }}">{{ 'Privacy policy'|trans }}</a></li>
 							<li><a class="main-color-2" href="{{ path('contact') }}" title="{{ 'Contact us'|trans }}">{{ 'Contact'|trans }}</a></li>
 							<li><a class="main-color-2" href="{{ path('info') }}" title="{{ 'Info about us'|trans }}">{{ 'Info'|trans }}</a></li>
 							{% if settings.enable_blog %}<li><a class="main-color-2" href="{{ path('blog') }}" title="{{ 'Blog'|trans }}">{{ 'Blog'|trans }}</a></li>{% endif %}
@@ -151,7 +148,6 @@
 		</div>
 		<div id="footer_bottom" class="text-center">
 			{{ settings.footer_bottom|raw }}
-			{{ settings.footer_text|raw }}
 		</div>
 	</footer>
 
