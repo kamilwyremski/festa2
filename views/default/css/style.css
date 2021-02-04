@@ -37,11 +37,17 @@ a.main-color-2:hover{
 .btn-1:hover{
     background-color: #eba23b; color: white;
 }
+.btn-1:focus{
+	box-shadow: 0 0 0 0.2rem rgba(235,162,59,0.1);
+}
 .btn-2{
     background-color: #087dc2; color: white;
 }
 .btn-2:hover{
     background-color: #0870ae; color: white;
+}
+.btn-2:focus{
+	box-shadow: 0 0 0 0.2rem rgba(8,112,174,0.1);
 }
 .content *{
 	max-width: 100%;
@@ -62,9 +68,6 @@ a.main-color-2:hover{
 	visibility: hidden; 
 }
 /* top & menu nav*/
-#top{
-	background-color: #087dc2; padding: 4px 20px; font-size: 0.8em;
-}
 #menu_box{
 	background-color: white; border-bottom: solid 1px #e8e8e8;
 }
