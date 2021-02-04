@@ -25,7 +25,7 @@ error_reporting(0);
 ob_start();
 
 if(phpversion()<7.2){
-	die('Wrong version of PHP on the server. The minimum supported is 7.1');
+	die('Wrong version of PHP on the server. The minimum supported is 7.2');
 }
 
 if(!is_writable('../config/db.php')){
