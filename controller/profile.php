@@ -19,7 +19,7 @@ if(!isset($settings['base_url'])){
 }
 
 if(!empty($_GET['slug'])){
-	$profile = user::showProfile($_GET['slug']);
+	$profile = user::showProfile((!empty($_GET['id']) ? $_GET['id'].'-' : '').$_GET['slug']);
 
 	if($profile){
 		$settings['seo_title'] = trans('Profile of').': '.$profile['username'].' - '.$settings['title'];
