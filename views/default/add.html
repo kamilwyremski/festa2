@@ -154,7 +154,7 @@
 							{% if classified.photos %}
 								{% for photo in classified.photos %}
 									<div class="img-thumbnail">
-										<img src="upload/photos/{{ photo.folder }}{{ photo.thumb }}" alt="{{ photo.url }}">
+										<img src="upload/photos/{{ photo.folder }}{{ photo.thumb }}" alt="{{ photo.url }}" loading="lazy">
 										<br><button class="btn btn-link remove_photo text-danger" title="{{ 'Remove photo'|trans }}: {{ photo.url }}">{{ 'Remove'|trans }}</button>
 										<input type="hidden" name="photos[]" value="{{ photo.id }}">
 									</div>

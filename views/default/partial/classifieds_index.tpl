@@ -3,7 +3,7 @@
 {% for classified in classifieds %}
 	<div class="col-lg-4 col-md-6 col-sm-12 text-center" itemscope itemtype="https://schema.org/Accommodation">
 		<a href="{{ path('classified',classified.id,classified.slug) }}" title="{{ classified.name }}" itemprop="url" class="classifieds_index overflow_hidden {% if classified.promoted %}classifieds_index_promoted{% endif %}" >
-			<img src="{% if classified.thumb %}upload/photos/{{ classified.thumb }}{% else %}{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png{% endif %}" alt="{{ classified.name }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" itemprop="image">
+			<img src="{% if classified.thumb %}upload/photos/{{ classified.thumb }}{% else %}{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png{% endif %}" alt="{{ classified.name }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" itemprop="image" loading="lazy">
 			<div class="classifieds_index_bottom">
 				<h5 class="text"><strong itemprop="name">{{ classified.name }}</strong></h6>
 				<h6 class="text">

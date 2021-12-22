@@ -9,13 +9,13 @@
 			<div class="col-md-6">
 				<div id="login_box">
 					<ul class="nav nav-tabs" role="tablist">
-						<li class="nav-item {% if tab_active=='login' %}active{% endif %}"><a href="#login" class="nav-link main-color-2 {% if tab_active=='login' %}active{% endif %}"  data-toggle="tab" role="tab" aria-controls="login" aria-selected="{% if tab_active=='login' %}true{% else %}false{% endif %}">{{ 'Log in'|trans }}</a></li>
-						<li class="nav-item {% if tab_active=='register' %}active{% endif %}"><a href="#register" class="nav-link main-color-2 {% if tab_active=='register' %}active{% endif %}" data-toggle="tab" role="tab" aria-controls="register" aria-selected="{% if tab_active=='register' %}true{% else %}false{% endif %}">{{ 'Register'|trans }}</a></li>
-						<li class="nav-item {% if tab_active=='reset_password' %}active{% endif %}"><a href="#reset_password" class="nav-link main-color-2 {% if tab_active=='reset_password' %}active{% endif %}" data-toggle="tab" role="tab" aria-controls="reset_password" aria-selected="{% if tab_active=='reset_password' %}true{% else %}false{% endif %}">{{ 'Reset password'|trans }}</a></li>
-					 </ul>
-					 {% if alert_success or alert_danger %}<br>{% endif %}
-					 {% include 'partial/alert.tpl' %}
-					 <div class="tab-content">
+						<li class="nav-item {% if tab_active=='login' %}active{% endif %}"><a href="#login" class="nav-link main-color-2 {% if tab_active=='login' %}active{% endif %}"  data-toggle="tab" role="tab" aria-controls="login" aria-selected="{% if tab_active=='login' %}true{% else %}false{% endif %}" id="login-tab">{{ 'Log in'|trans }}</a></li>
+						<li class="nav-item {% if tab_active=='register' %}active{% endif %}"><a href="#register" class="nav-link main-color-2 {% if tab_active=='register' %}active{% endif %}" data-toggle="tab" role="tab" aria-controls="register" aria-selected="{% if tab_active=='register' %}true{% else %}false{% endif %}" id="register-tab">{{ 'Register'|trans }}</a></li>
+						<li class="nav-item {% if tab_active=='reset_password' %}active{% endif %}"><a href="#reset_password" class="nav-link main-color-2 {% if tab_active=='reset_password' %}active{% endif %}" data-toggle="tab" role="tab" aria-controls="reset_password" aria-selected="{% if tab_active=='reset_password' %}true{% else %}false{% endif %}" id="reset_password-tab">{{ 'Reset password'|trans }}</a></li>
+					</ul>
+					{% if alert_success or alert_danger %}<br>{% endif %}
+					{% include 'partial/alert.tpl' %}
+					<div class="tab-content">
 						<div class="tab-pane container {% if tab_active=='login' %}active{% else %}fade{% endif %}" id="login" role="tabpanel" aria-labelledby="login-tab">
 							{% if form_complete_data %}
 								<form method="post">
@@ -31,7 +31,7 @@
 										<input type="text" class="form-control" name="username" placeholder="{{ 'Username'|trans }}" required maxlength="64" value="{{ input.username }}" title="{{ 'Enter your username. Use only characters:'|trans }} a-zA-Z0-9-_" pattern="[a-zA-Z0-9-_]+">
 									</div>
 									<div class="custom-control custom-checkbox">
-	                  <input type="checkbox" name="rules" class="custom-control-input" id="complete_rules" required {% if input.rules %}checked{% endif %}>
+	              		<input type="checkbox" name="rules" class="custom-control-input" id="complete_rules" required {% if input.rules %}checked{% endif %}>
 	                  <label class="custom-control-label" for="complete_rules">{{ 'Accepts the terms and conditions and the privacy policy'|trans }}</label>
 											<p><a href="{{ path('rules') }}" title="{{ 'Terms of service'|trans }}" target="_blank" class="main-color-2">{{ 'Terms of service'|trans }}</a> - <a href="{{ path('privacy_policy') }}" title="{{ 'Privacy policy'|trans }}" target="_blank" class="main-color-2">{{ 'Privacy policy'|trans }}</a></p>
 	                </div>

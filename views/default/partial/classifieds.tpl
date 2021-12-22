@@ -34,7 +34,7 @@
 		<div class="classifieds {% if classified.promoted %}promoted{% endif %}" itemscope itemtype="https://schema.org/Accommodation">
 			<div class="row">
 				<div class="col-md-4 col-sm-5 text-center">
-					<a href="{{ path('classified',classified.id,classified.slug) }}" title="{{ classified.name }}" itemprop="url"><img src="{% if classified.thumb %}upload/photos/{{ classified.thumb }}{% else %}{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png{% endif %}" alt="{{ classified.name }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" itemprop="image"></a>
+					<a href="{{ path('classified',classified.id,classified.slug) }}" title="{{ classified.name }}" itemprop="url"><img src="{% if classified.thumb %}upload/photos/{{ classified.thumb }}{% else %}{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png{% endif %}" alt="{{ classified.name }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" itemprop="image" loading="lazy"></a>
 				</div>
 				<div class="col-md-7 col-sm-5 overflow_hidden">
 					<h4><a href="{{ path('classified',classified.id,classified.slug) }}" title="{{ classified.name }}" class="main-color-2"><span itemprop="name">{{ classified.name }}</span></a></h4>

@@ -5,7 +5,7 @@
 		{% for blog in blogs %}
 			<li class="media">
 				<a href="{{ path('blog',blog.id,blog.slug) }}" class="mr-3">
-					<img src="{% if blog.thumb %}{{ blog.thumb }}{% else %}{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png{% endif %}" alt="{{ blog.name }}" class="img-fluid img-thumbnail" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'">
+					<img src="{% if blog.thumb %}{{ blog.thumb }}{% else %}{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png{% endif %}" alt="{{ blog.name }}" class="img-fluid img-thumbnail" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" loading="lazy">
 				</a>
 				<div class="media-body">
 					<h5 class="mt-0 mb-2"><a href="{{ path('blog',blog.id,blog.slug) }}" class="main-color-2">{{ blog.name }}</a></h5>

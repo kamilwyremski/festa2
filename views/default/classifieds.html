@@ -17,7 +17,7 @@
 				var locations = [
 					{% for classified in classifieds %}
 						{% if classified.address_lat!=0 and classified.address_long!=0 %}
-							{name:'{{ classified.name }}', lat:{{ classified.address_lat }}, long:{{ classified.address_long }}, index:{{ loop.index }}, content:'<a href="{{ path('classified',classified.id,classified.slug) }}" title="{{ classified.name }}"><p class="google_maps_p">{{ classified.name|slice(0,40) }}</p>{% if classified.thumb %}<img src="upload/photos/{{ classified.thumb }}" alt="{{ classified.name }}" onerror="this.src=\'{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png\'" class="google_maps_img">{% endif %}</a>'}{% if not loop.last %},{% endif %}
+							{name:'{{ classified.name }}', lat:{{ classified.address_lat }}, long:{{ classified.address_long }}, index:{{ loop.index }}, content:'<a href="{{ path('classified',classified.id,classified.slug) }}" title="{{ classified.name }}"><p class="google_maps_p">{{ classified.name|slice(0,40) }}</p>{% if classified.thumb %}<img src="upload/photos/{{ classified.thumb }}" alt="{{ classified.name }}" onerror="this.src=\'{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png\'" class="google_maps_img" loading="lazy">{% endif %}</a>'}{% if not loop.last %},{% endif %}
 						{% endif %}
 					{% endfor %}
 				]
@@ -110,7 +110,7 @@
 									</h4>
 									<ul class="list-unstyled">
 									{% for cat in categories %}
-										<li {% if get.category==cat.id %}class="active"{% endif %}><a href="{{ cat.search_path }}" title="{{ 'Category'|trans }}: {{ cat.name }}">{% if cat.thumb %}<img src="{{ cat.thumb }}" alt="{{ cat.name }}"> {% endif %}{{ cat.name }}{% if settings.show_number_classifieds_in_categories and not get.search is defined and not get.state and not get.location %} <span class="badge badge-secondary">{{ cat.number_classifieds }}</span>{% endif %}</a></li>
+										<li {% if get.category==cat.id %}class="active"{% endif %}><a href="{{ cat.search_path }}" title="{{ 'Category'|trans }}: {{ cat.name }}">{% if cat.thumb %}<img src="{{ cat.thumb }}" alt="{{ cat.name }}" loading="lazy"> {% endif %}{{ cat.name }}{% if settings.show_number_classifieds_in_categories and not get.search is defined and not get.state and not get.location %} <span class="badge badge-secondary">{{ cat.number_classifieds }}</span>{% endif %}</a></li>
 									{% endfor %}
 									</ul>
 								</nav>

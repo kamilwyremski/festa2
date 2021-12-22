@@ -116,7 +116,7 @@
 			<nav class="container">
 				<div class="row">
 					{% for item in categories %}
-						<div class="col-lg-3 col-md-4 col-sm-6 col-12 index_categories"><a href="{{ path('classifieds') }}?category={{ item.id }}" title="{{ 'Category'|trans }}: {{ item.name }}" class="{% if item.list_subcategories %}index_show_subcategories{% endif %}" data-id="{{ item.id }}" data-index="{{ loop.index }}">{% if item.thumb %}<img src="{{ item.thumb }}" alt="{{ item.name }}"> {% endif %}<span class="name">{{ item.name }}</span></a></div>
+						<div class="col-lg-3 col-md-4 col-sm-6 col-12 index_categories"><a href="{{ path('classifieds') }}?category={{ item.id }}" title="{{ 'Category'|trans }}: {{ item.name }}" class="{% if item.list_subcategories %}index_show_subcategories{% endif %}" data-id="{{ item.id }}" data-index="{{ loop.index }}">{% if item.thumb %}<img src="{{ item.thumb }}" alt="{{ item.name }}" loading="lazy"> {% endif %}<span class="name">{{ item.name }}</span></a></div>
 					{% endfor %}
 				</div>
 				{% for item in categories %}

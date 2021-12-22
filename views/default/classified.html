@@ -131,14 +131,14 @@
 					<div id="classified_photos">
 						{% for photo in classified.photos %}
 							{% if loop.index==1 %}
-								<a href="upload/photos/{{ photo.folder }}{{ photo.url }}" title="{{ classified.name }}" data-lightbox="classified_photos" data-title="{{ classified.name }}"><img src="upload/photos/{{ photo.folder }}{{ photo.url }}" alt="{{ classified.name }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" itemprop="image" class="big"></a><br>
+								<a href="upload/photos/{{ photo.folder }}{{ photo.url }}" title="{{ classified.name }}" data-lightbox="classified_photos" data-title="{{ classified.name }}"><img src="upload/photos/{{ photo.folder }}{{ photo.url }}" alt="{{ classified.name }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" itemprop="image" class="big"  loading="lazy"></a><br>
 							{% else %}
-								<a href="upload/photos/{{ photo.folder }}{{ photo.url }}" title="{{ classified.name }}" data-lightbox="classified_photos" data-title="{{ classified.name }}"><img src="upload/photos/{{ photo.folder }}{{ photo.thumb }}" alt="{{ classified.name }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" itemprop="image"></a>
+								<a href="upload/photos/{{ photo.folder }}{{ photo.url }}" title="{{ classified.name }}" data-lightbox="classified_photos" data-title="{{ classified.name }}"><img src="upload/photos/{{ photo.folder }}{{ photo.thumb }}" alt="{{ classified.name }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" itemprop="image" loading="lazy"></a>
 							{% endif %}
 						{% endfor %}
 					</div>
 				{% else %}
-					<img src="{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png" alt="No photo" class="img-thumbnail"><br><br>
+					<img src="{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png" alt="No photo" class="img-thumbnail" loading="lazy"><br><br>
 				{% endif %}
 			</div>
 			<div class="col-md-5">
@@ -148,7 +148,7 @@
 					{% endif %}
 					<div class="table-responsive">
 						<table class="table table-sm table-hover">
-							{% if classified.username %}<tr><td>{{ 'Added by'|trans }}: </td><td><a href="{{ path('profile',0,classified.username) }}" title="{{ 'Profile of'|trans }}: {{ classified.username }}" class="main-color-2">{% if classified.user_avatar %}<img src="upload/avatars/{{ classified.user_avatar }}" alt="{{ 'Avatar'|trans }}" class="img-fluid"> {% endif %}{{ classified.username }}</a></td></tr>{% endif %}
+							{% if classified.username %}<tr><td>{{ 'Added by'|trans }}: </td><td><a href="{{ path('profile',0,classified.username) }}" title="{{ 'Profile of'|trans }}: {{ classified.username }}" class="main-color-2">{% if classified.user_avatar %}<img src="upload/avatars/{{ classified.user_avatar }}" alt="{{ 'Avatar'|trans }}" class="img-fluid" loading="lazy"> {% endif %}{{ classified.username }}</a></td></tr>{% endif %}
 							
 							{% if settings.hide_data_not_logged and not user.id %}
 								<tr><td colspan="2"><a href="{{ path('login') }}?redirect={{ path('classified',classified.id,classified.slug) }}" title="{{ 'Log in on the website'|trans }}" class="main-color-1">{{ 'You must be logged in to view contact details'|trans }}</a></td></tr>
@@ -168,15 +168,15 @@
 		</div>
 		<div id="classified_box_description">
 			<ul class="nav nav-tabs d-print-none" role="tablist">
-				<li class="nav-item active"><a href="#description" class="nav-link active main-color-2" data-toggle="tab" role="tab" aria-controls="description" aria-selected="true">{{ 'Description'|trans }}</a></li>
+				<li class="nav-item active"><a href="#description" class="nav-link active main-color-2" data-toggle="tab" role="tab" aria-controls="description" aria-selected="true" id="description-tab">{{ 'Description'|trans }}</a></li>
 				{% if classified.options %}
-					<li class="nav-item"><a href="#classified_options" class="nav-link main-color-2" data-toggle="tab" role="tab" aria-controls="classified_options" aria-selected="false">{{ 'Details'|trans }}</a></li>
+					<li class="nav-item"><a href="#classified_options" class="nav-link main-color-2" data-toggle="tab" role="tab" aria-controls="classified_options" aria-selected="false" id="options-tab">{{ 'Details'|trans }}</a></li>
 				{% endif %}
 				{% if settings.show_contact_form_classified %}
-					<li class="nav-item"><a href="#contact_form" class="nav-link main-color-2" data-toggle="tab" role="tab" aria-controls="contact_form" aria-selected="false">{{ 'Contact form'|trans }}</a></li>
+					<li class="nav-item"><a href="#contact_form" class="nav-link main-color-2" data-toggle="tab" role="tab" aria-controls="contact_form" aria-selected="false" id="contact_form-tab">{{ 'Contact form'|trans }}</a></li>
 				{% endif %}
 				{% if (not settings.promote_only_by_author or (classified.user_id==user.id and user.id)) and (settings.pay_by_dotpay or settings.pay_by_paypal or settings.pay_by_p24) %}
-					<li class="nav-item"><a href="#promote" class="nav-link main-color-2" data-toggle="tab" role="tab" aria-controls="promote" aria-selected="false">{{ 'Promote'|trans }}</a></li>
+					<li class="nav-item"><a href="#promote" class="nav-link main-color-2" data-toggle="tab" role="tab" aria-controls="promote" aria-selected="false" id="promote-tab">{{ 'Promote'|trans }}</a></li>
 				{% endif %}
 				</ul>
 				<div class="tab-content">

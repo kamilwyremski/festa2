@@ -120,7 +120,7 @@
 
 <div id="cookies-message-container"><div id="cookies-message">{{ 'This site uses cookies, so that our service may work better.'|trans }}<a href="javascript:WHCloseCookiesWindow();" id="accept-cookies-checkbox">{{ 'I accept'|trans }}</a></div></div>
 
-<div class="modal fade" id="roxySelectFile" tabindex="-1" role="dialog" aria-labelledby="Select file">
+<div class="modal fade" id="roxySelectFile" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			 <div class="modal-body">

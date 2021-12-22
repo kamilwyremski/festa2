@@ -9,7 +9,7 @@
 			<br><h2>{{ 'Profile of'|trans }}: {{ profile.username }}</h2>
 			<h5><a href="{{ path('classifieds') }}?search&username={{ profile.username }}" title="{{ 'See all classifieds added by this user'|trans }}" class="main-color-1">{{ 'See all classifieds added by this user'|trans }}</a></h5>
 		</div>
-		{% if profile.avatar %}<br><div class="text-center"><img src="upload/avatars/{{ profile.avatar }}" alt="{{ 'Avatar'|trans }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'"></div>{% endif %}
+		{% if profile.avatar %}<br><div class="text-center"><img src="upload/avatars/{{ profile.avatar }}" alt="{{ 'Avatar'|trans }}" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" loading="lazy"></div>{% endif %}
 		{% if profile.description %}
 			<br>{{ profile.description|raw }}<br>
 		{% endif %}
