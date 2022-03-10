@@ -597,7 +597,7 @@ INSERT INTO `settings` (`name`, `value`) VALUES
 ('social_facebook', '1'),
 ('social_pinterest', '1'),
 ('social_twitter', '1'),
-('social_wykop', '1'),
+('social_linkedin', '1'),
 ('template', 'default'),
 ('title', 'Festa2 - skrypt bazy noclegów'),
 ('url_facebook', ''),

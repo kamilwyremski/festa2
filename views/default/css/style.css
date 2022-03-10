@@ -52,9 +52,6 @@ a.main-color-2:hover{
 .content *{
 	max-width: 100%;
 }
-.social_inline_block{
-	display: inline-block; vertical-align: top; padding: 7px;
-}
 #google_maps{
 	height: 400px
 }
@@ -66,6 +63,15 @@ a.main-color-2:hover{
 }
 .grecaptcha-badge { 
 	visibility: hidden; 
+}
+.social_share_box{
+	display: flex; padding-top: 5px;
+}
+.social_share_box i{
+	color: #f0ad4e; font-size: 18px; padding: 0 0 7px 14px;
+}
+.social_share_box i:hover{
+	color: #eba23b;
 }
 /* top & menu nav*/
 #menu_box{
