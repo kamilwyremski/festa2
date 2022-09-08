@@ -1,7 +1,7 @@
 <?php
 /************************************************************************
  * The script of accommodation FESTA2
- * Copyright (c) 2018 - 2022 by IT Works Better https://itworksbetter.net
+ * Copyright (c) 2018 - 2021 by IT Works Better https://itworksbetter.net
  * Project by Kamil Wyremski https://wyremski.pl
  *
  * All right reserved
@@ -58,10 +58,10 @@ if(isset($_POST['action']) and $_POST['action']=='new_payment' and isset($_POST[
 			'p24_merchant_id' => $settings['p24_merchant_id'],
 			'p24_pos_id' => $settings['p24_pos_id'],
 			'p24_session_id' => $payment_p24['id'],
-			'p24_amount' => ($payment_p24['amount']*100),
+			'p24_amount' => $payment_p24['amount'],
 			'p24_currency' => 'PLN',
 			'p24_order_id' => $_POST['p24_order_id'],
-			'p24_sign' => md5($payment_p24['id']."|".$_POST['p24_order_id']."|".($payment_p24['amount']*100)."|".$settings['p24_currency']."|".$settings['p24_crc'])
+			'p24_sign' => md5($payment_p24['id']."|".$_POST['p24_order_id']."|".$payment_p24['amount']."|".$settings['p24_currency']."|".$settings['p24_crc'])
 		];
 
 		$req = array();
