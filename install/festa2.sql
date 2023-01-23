@@ -512,7 +512,7 @@ INSERT INTO `settings` (`name`, `value`) VALUES
 ('facebook_secret', ''),
 ('facebook_side_panel', '0'),
 ('favicon', '/upload/images/favicon.png'),
-('footer_bottom', '<p class=\"mb-2\">Strona pokazowa skryptu bazy nocleg&oacute;w&nbsp;FESTA2</p>\r\n<p class=\"small\">Festa 2.3 &copy; Project 2019 - 2022 by <a href=\"https://itworksbetter.net\" target=\"_blank\" title=\"Creating websites\">IT Works Better</a></p>'),
+('footer_bottom', '<p class=\"mb-2\">Strona pokazowa skryptu bazy nocleg&oacute;w&nbsp;FESTA2</p>\r\n<p class=\"small\">Festa 2.3.1 &copy; Project 2019 - 2023 by <a href=\"https://itworksbetter.net\" target=\"_blank\" title=\"Creating websites\">IT Works Better</a></p>'),
 ('footer_top', '<p>FESTA2 to uniwersalny skrypt dla strony z baza nocleg&oacute;w. Skrypt jest bardzo łatwy w obsłudze zar&oacute;wno przez administratora jak i klient&oacute;w serwisu. Dzięki dużej licznie opcji konfiguracyjnych jest bardzo uniwersalny.</p>\r\n'),
 ('generate_sitemap', '1'),
 ('google_id', ''),

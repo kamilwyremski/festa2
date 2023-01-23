@@ -1,7 +1,7 @@
 ﻿$(document).ready(function(){
 
 	function set_required(object){
-		let $target = $('.'+object.data('target'));
+		const $target = $('.'+object.data('target'));
 		if (object.is(':checked')) {
 			$target.prop('required', true);
 		}else{
@@ -17,7 +17,7 @@
 	})
 
 	$('.select_checkbox').click(function(){
-		let $this = $(this);
+		const $this = $(this);
 		if ($this.is(':checked')) {
 			$this.parents('.parent_select_checkbox').find('input[type=checkbox]').prop('checked', true);
 		}else{
@@ -26,7 +26,7 @@
 	})
 
 	$('.option_select').change(function(){
-		let $this = $(this);
+		const $this = $(this);
 		if($this.val()=='select'){
 			$this.parents('form').find('.option_label').show().find('textarea').attr("disabled", false);
 			$this.parents('form').find('.option_label_required').show().find('input[type=checkbox]').attr("disabled", false);
@@ -41,7 +41,7 @@
 	$('.option_select').change();
 
 	$('.option_all_categories').click(function(){
-		let $this = $(this);
+		const $this = $(this);
 		if ($this.is(':checked')) {
 			$this.parents('form').find('.option_all_categories_div').slideToggle().find('input[type=checkbox]').prop('checked', true);
 		}else{
@@ -59,36 +59,36 @@
 	})
 
 	$(".ajax").not('.inactive').click(function(){
-		let mydata = $(this).data();
+		const mydata = $(this).data();
 		$.post('php/ajax.php', {
 			'data' : mydata,
 			'send': 'ok'},
-			function(data) {
+			function() {
 				window.location.href = window.location;
 		});
-        return false;
-    });
+		return false;
+	});
 
 	$(".ajax_confirm").not('inactive').click(function(){
-		let $this = $(this);
-		let is_confirmed = confirm($this.data('title'));
+		const $this = $(this);
+		const is_confirmed = confirm($this.data('title'));
 		if (is_confirmed) {
-			let mydata = $this.data();
+			const mydata = $this.data();
 			$.post('php/ajax.php', {
 				'data' : mydata,
 				'send': 'ok'},
-				function(data) {
+				function() {
 					window.location.href = window.location;
 			});
 		}
-        return false;
-    });
+		return false;
+	});
 
 	$('.select_option').click(function(){
-		let $this = $(this);
-		let depth = $this.data('depth');
+		const $this = $(this);
+		const depth = $this.data('depth');
 		if($this.next().data('depth')>=depth){
-			let $checkbox = $this.find('input[type=checkbox]');
+			const $checkbox = $this.find('input[type=checkbox]');
 			if($checkbox.is(':checked')) {
 				$this.nextUntil(".depth_"+depth).not(".depth_"+(depth-1)).find('input[type=checkbox]').prop('checked', true);
 			}else{
@@ -98,12 +98,12 @@
 	})
 
 	$('.link_to_hidden_option').click(function(){
-		let $this = $(this);
+		const $this = $(this);
 		if($this.hasClass('active')){
 			$('.hidden_option_'+$this.data('id')).hide();
 			$this.removeClass('active').find('.span_inactive').hide().end().find('.span_active').show();
 		}else{
-			$hidden_options = $('.hidden_option_'+$this.data('id'));
+			const $hidden_options = $('.hidden_option_'+$this.data('id'));
 			if($hidden_options.length){
 				$hidden_options.show();
 			}else{
@@ -123,17 +123,17 @@ $(document).on('click', '.open_roxy', function(){
 })
 
 $(document).on('hidden.bs.modal', '.modal', function () {
-    $('.modal:visible').length && $(document.body).addClass('modal-open');
+  $('.modal:visible').length && $(document.body).addClass('modal-open');
 });
 
 function closeRoxySelectFile(){
-	let $roxy_target = $('.roxy_target');
+	const $roxy_target = $('.roxy_target');
 	$("[name='"+$roxy_target.data('roxy_name')+"']").val($roxy_target.attr('src'));
 	$('#roxySelectFile').modal('hide');
 }
 
 function run_ckeditor(id,height=200){
-	let roxyFileman = 'js/ckeditor/fileman/index.php';
+	const roxyFileman = 'js/ckeditor/fileman/index.php';
 	$(function(){
 		CKEDITOR.replace( id,{height: height,
 			filebrowserBrowseUrl:roxyFileman,

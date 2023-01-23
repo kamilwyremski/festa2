@@ -10,20 +10,22 @@ $(function(){
 	});
 
 	$("#form_add_classified").submit(function(){
-		$last = $("select[name=category_id]:enabled").last();
-		if($last.val()==""){
+		const $last = $("select[name=category_id]:enabled").last();
+		if($last.val() == ""){
 			$last.attr("disabled", true);
 		}
 	})
 
 	$("#input_select_photo").change(function (){
-		$this = $(this);
-		var flag = true, number_photos = $this[0].files.length, photo_count = $("#preview_photos .img-thumbnail").length;
-		var progress_bar_value = 0;
+		const $this = $(this);
+		const number_photos = $this[0].files.length;
+		let flag = true;
+		let photo_count = $("#preview_photos .img-thumbnail").length;
+		let progress_bar_value = 0;
 		if(number_photos && (!photo_max || photo_max>photo_count)){
 			$("#photos_progress").show();
 			$("#preview_load").css("display", "inline-block");
-			var $progress_bar = $("#photos_progress").find(".progress-bar");
+			const $progress_bar = $("#photos_progress").find(".progress-bar");
 			$("#photos_info").hide().html("");
 			$("#box_add_classified input[type=submit]").prop("disabled", true);
 			$.each($this[0].files, function(index, value){
@@ -74,7 +76,7 @@ $(function(){
 	})
 
 	$("#button_get_coordinates").click(function(){
-		let address = $("input[name=address]").val();
+		const address = $("input[name=address]").val();
 		if(address){
 			$.ajax({
 				url: "php/ajax.php",
@@ -83,7 +85,7 @@ $(function(){
 				dataType :"json",
 				success: function(data) {
 					if(data.lat && data.long){
-						let latlng = new google.maps.LatLng(data.lat, data.long);
+						const latlng = new google.maps.LatLng(data.lat, data.long);
 						google_maps_marker.setPosition(latlng);
 						google_maps.setCenter(latlng);
 						$("input[name=address_lat]").val(data.lat);
@@ -92,8 +94,8 @@ $(function(){
 				}
 			});
 		}
-        return false;
-    });
+    return false;
+  });
 });
 
 angular.module("addClassified", []).controller("addClassified", function($scope,$http,$q) {
@@ -104,7 +106,7 @@ angular.module("addClassified", []).controller("addClassified", function($scope,
 	$scope.loadCategories = function(select_category_id=0,category_id=0,load_options=1){
 		$scope.waiting_for_response = true;
 		$scope.select_category_id = select_category_id;
-		for(var i = 0; i < $scope.list_categories.length; i++) {
+		for(let i = 0; i < $scope.list_categories.length; i++) {
 			if($scope.list_categories[i].category_id == select_category_id) {
 				$scope.list_categories.splice((i+1), $scope.list_categories.length);break;
 			}
