@@ -1,6 +1,6 @@
 <?php
 /************************************************************************
- * The script of accommodation FESTA 2.3.1
+ * The script of accommodation FESTA 2.3.2
  * Copyright (c) 2018 - 2023 by IT Works Better https://itworksbetter.net
  * Project by Kamil Wyremski https://wyremski.pl
  *

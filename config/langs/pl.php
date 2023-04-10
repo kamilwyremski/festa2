@@ -359,7 +359,7 @@ $translate['Login page'] = 'Strona logowania';
 $translate['Login panel'] = 'Panel logowania';
 $translate['Logins'] = 'Logowania';
 $translate['Logo'] = 'Logo';
-$translate['Logo - Facebook'] = 'Logo - Facebook';
+$translate['Logo - Facebook'] = 'Logo serwisu przy udostępnianiu przez Facebook';
 $translate['Logout all users'] = 'Wyloguj wszystkich użytkowników';
 $translate['Logs'] = 'Logi';
 $translate['Logs classifieds'] = 'Logi ogłoszeń';
@@ -701,3 +701,4 @@ $translate['unique'] = 'unikalne';
 
 $translate['Invalid captcha code. Show that you are not robot!'] = 'Nieprawidłowa captcha. Potwierdź, że nie jesteś robotem!';
 $translate['Share'] = 'Udostępnij';
+$translate['The path can only contain lowercase letters of the English alphabet, numbers, and the characters _ and -'] = 'Ścieżka może zawierać tylko małe litery angielskiego alfabetu, cyfry oraz znaki _ i -';
