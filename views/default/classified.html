@@ -27,18 +27,26 @@
 		<script>
 			function displayMap() {
 				window.addEventListener('load', function() {
-					var myLatlng = new google.maps.LatLng({{ classified.address_lat }},{{ classified.address_long }});
-					var map = new google.maps.Map(document.getElementById("google_maps"), {
+					const myLatlng = new google.maps.LatLng({{ classified.address_lat }},{{ classified.address_long }});
+					const map = new google.maps.Map(document.getElementById("google_maps"), {
 						zoom: {{ settings.google_maps_zoom_classified|default(10) }},
 						center: myLatlng,
 						mapTypeId: google.maps.MapTypeId.ROADMAP,
 						scrollwheel:  false
 					});
-					var marker = new google.maps.Marker({
+					const marker = new google.maps.Marker({
 						position: myLatlng,
 						map: map,
 						title: '{{ classified.name }}'
 					});
+					const content = '<div class="m-2"><p class="google_maps_p">{{ classified.name|slice(0,40) }}</p>{% if classified.photos %}<img src="upload/photos/{{ classified.photos[0].folder }}{{ classified.photos[0].thumb }}" alt="{{ classified.name }}" onerror="this.src=\'{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png\'" class="google_maps_img" loading="lazy">{% endif %}</div>';
+					const infowindow = new google.maps.InfoWindow();
+					google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+						return function() {
+							infowindow.setContent(content);
+							infowindow.open(map,marker);
+						};
+					})(marker,content,infowindow));
 				})
 			}
 		</script>

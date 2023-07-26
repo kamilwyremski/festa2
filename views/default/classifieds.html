@@ -6,43 +6,42 @@
 	{% if classifieds_show_map %}
 		<script>
 			function displayMap() {
-				autocomplete = new google.maps.places.Autocomplete((document.getElementById('search_main_address')), {types: ['geocode']});
-				autocomplete2 = new google.maps.places.Autocomplete((document.getElementById('search_box_address')), {types: ['geocode']});
-				var map = new google.maps.Map(document.getElementById('google_maps'), {
+				new google.maps.places.Autocomplete((document.getElementById('search_box_address')), {types: ['geocode']});
+				const map = new google.maps.Map(document.getElementById('google_maps'), {
 					center: new google.maps.LatLng({{ settings.google_maps_lat }},{{ settings.google_maps_long }}),
 					zoom: 6,
 					mapTypeId: google.maps.MapTypeId.ROADMAP,
 					scrollwheel:  false
 				});
-				var locations = [
+				const locations = [
 					{% for classified in classifieds %}
 						{% if classified.address_lat!=0 and classified.address_long!=0 %}
 							{name:'{{ classified.name }}', lat:{{ classified.address_lat }}, long:{{ classified.address_long }}, index:{{ loop.index }}, content:'<a href="{{ path('classified',classified.id,classified.slug) }}" title="{{ classified.name }}"><p class="google_maps_p">{{ classified.name|slice(0,40) }}</p>{% if classified.thumb %}<img src="upload/photos/{{ classified.thumb }}" alt="{{ classified.name }}" onerror="this.src=\'{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png\'" class="google_maps_img" loading="lazy">{% endif %}</a>'}{% if not loop.last %},{% endif %}
 						{% endif %}
 					{% endfor %}
 				]
-				var point, before_infoWindows;
-				var bounds = new google.maps.LatLngBounds();
-				var markers = [];
+				let before_infoWindows;
+				const bounds = new google.maps.LatLngBounds();
+				const markers = [];
 				for (i = 0; i < locations.length; i++) {
 					latlngset = new google.maps.LatLng(locations[i].lat, locations[i].long);
-					var punkt = new google.maps.Marker({
+					const marker = new google.maps.Marker({
 						map: map, title: locations[i].name, position: latlngset
 					});
-					markers.push(punkt);
-					var content = locations[i].content;
-					var infowindow = new google.maps.InfoWindow()
-					google.maps.event.addListener(punkt,'click', (function(punkt,content,infowindow){
+					markers.push(marker);
+					const content = locations[i].content;
+					const infowindow = new google.maps.InfoWindow();
+					google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
 						return function() {
 							if(before_infoWindows){
 								before_infoWindows.close();
 							}
 							infowindow.setContent(content);
-							infowindow.open(map,punkt);
+							infowindow.open(map,marker);
 							before_infoWindows = infowindow;
 						};
-					})(punkt,content,infowindow));
-					bounds.extend(punkt.position);
+					})(marker,content,infowindow));
+					bounds.extend(marker.position);
 				}
 				google.maps.event.addListener(map, 'zoom_changed', function() {
 					zoomChangeBoundsListener =
@@ -56,7 +55,7 @@
 				});
 				map.initialZoom = true;
 				map.fitBounds(bounds);
-				var markerCluster = new MarkerClusterer(map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+				new MarkerClusterer(map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 			}
 		</script>
 		<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>

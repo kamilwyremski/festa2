@@ -203,7 +203,7 @@ function initGoogleMap() {
 	}else{
 		const input = document.getElementById('search_main_address');
 		if(input){
-			autocomplete = new google.maps.places.Autocomplete(input, {types: ['geocode']});
+			new google.maps.places.Autocomplete(input, {types: ['geocode']});
 		}
 	}
 }

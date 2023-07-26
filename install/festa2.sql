@@ -569,7 +569,7 @@ INSERT INTO `settings` (`name`, `value`) VALUES
 ('required_phone', '0'),
 ('required_state', '0'),
 ('required_subcategory', '0'),
-('required_type', '0'),
+('required_location', '0'),
 ('rodo_alert', '1'),
 ('rodo_alert_text', '<p>Szanowny użytkowniku,<br />\r\npragniemy Cię poinformować, że nasz serwis internetowy może personalizować treści marketingowe do Twoich potrzeb. W związku z tym danymi osobowymi, kt&oacute;re przetwarzamy są np. Tw&oacute;j adres IP, dane pozyskiwane na podstawie plik&oacute;w cookies lub podobnych mechanizm&oacute;w na Twoim urządzeniu o ile pozwolą one na zidentyfikowanie Ciebie.&nbsp;<br />\r\nWięcej informacji odnośnie przetwarzania danych osobowych znajdziesz w naszej <a href=\"/info/1,polityka-prywatnosci\">Polityce Prywatności.</a></p>'),
 ('rss', '1'),

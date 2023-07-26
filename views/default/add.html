@@ -22,7 +22,7 @@
 		<script>
 			var google_maps, google_maps_marker;
 			function displayMap() {
-				autocomplete = new google.maps.places.Autocomplete((document.getElementById('add_address')), {types: ['geocode']});
+				new google.maps.places.Autocomplete((document.getElementById('add_address')), {types: ['geocode']});
 				window.addEventListener('load', function() {
 					{% if classified and (classified.address_lat!=0 or classified.address_long!=0) %}var myLatlng = new google.maps.LatLng({{ classified.address_lat }},{{ classified.address_long }});{% endif %}
 					google_maps = new google.maps.Map(document.getElementById("google_maps"), {

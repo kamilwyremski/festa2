@@ -27,7 +27,7 @@ if($admin->is_logged()){
 
 			settings::saveArrays(
 				['base_url','email','title','keywords','description','analytics','recaptcha_site_key','recaptcha_secret_key','number_char_title','google_maps_api','google_maps_api2','google_maps_lat','google_maps_long','google_maps_zoom_add','google_maps_zoom_classified','google_maps_long','limit_page','limit_page_index','limit_similar','photo_max','photo_max_size','photo_max_height','photo_max_width','photo_quality','smtp_host','smtp_mail','smtp_user','smtp_password','smtp_port','smtp_secure'],
-				['add_classifieds_not_logged','automatically_activate_classifieds','enable_blog','rss','generate_sitemap','check_ip_user','required_type','required_category','required_subcategory','required_phone','required_address','required_state','google_maps','show_similar_classifieds','photo_add','watermark_add','hide_data_not_logged','hide_phone','hide_email','hide_views','mail_attachment','smtp']
+				['add_classifieds_not_logged','automatically_activate_classifieds','enable_blog','rss','generate_sitemap','check_ip_user','required_location','required_category','required_subcategory','required_phone','required_address','required_state','google_maps','show_similar_classifieds','photo_add','watermark_add','hide_data_not_logged','hide_phone','hide_email','hide_views','mail_attachment','smtp']
 			);
 			if($settings['lang']!=$_POST['lang']){
 				unset($translate);
