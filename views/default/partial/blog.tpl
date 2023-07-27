@@ -8,7 +8,7 @@
 					<img src="{% if blog.thumb %}{{ blog.thumb }}{% else %}{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png{% endif %}" alt="{{ blog.name }}" class="img-fluid img-thumbnail" onerror="this.src='{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png'" loading="lazy">
 				</a>
 				<div class="media-body">
-					<h5 class="mt-0 mb-2"><a href="{{ path('blog',blog.id,blog.slug) }}" class="main-color-2">{{ blog.name }}</a></h5>
+					<h4 class="mt-0 mb-2"><a href="{{ path('blog',blog.id,blog.slug) }}" class="main-color-2">{{ blog.name }}</a></h4>
 					<p class="text-muted small mb-2">{{ blog.date|date("d-m-Y") }}</p>
 					<p>{{ blog.lid }}</p>
 				</div>

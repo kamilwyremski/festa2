@@ -12,7 +12,11 @@
 	<!-- CSS style -->
 	{% block css %}
 		<link rel="stylesheet" href="views/{{ settings.template }}/css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+		
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" media="print" onload="this.media='all'" />
+
 		<link rel="stylesheet" href="js/easy-autocomplete/easy-autocomplete.min.css">
 		<link rel="stylesheet" href="views/{{ settings.template }}/css/style.css?{{ settings.assets_version }}"/>
 		{% if settings.favicon %}<link rel="shortcut icon" href="{{ settings.favicon }}">{% endif %}
@@ -129,17 +133,17 @@
 					<div class="col-md-4">
 						<h4>{{ 'Sitemap'|trans }}</h4>
 						<ul class="list-unstyled">
-							<li><a class="main-color-2" href="{{ settings.base_url }}" title="{{ settings.title }}">{{ 'Home'|trans }}</a></li>
-							<li><a class="main-color-2" href="{{ path('add') }}" title="{{ 'Add classified'|trans }}">{{ 'Add classified'|trans }}</a></li>
-							<li><a class="main-color-2" href="{{ path('classifieds') }}" title="{{ 'Search the best classifieds'|trans }}">{{ 'Classifieds'|trans }}</a></li>
-							<li><a class="main-color-2" href="{{ path('my_classifieds') }}" title="{{ 'My classifieds'|trans }}">{{ 'My classifieds'|trans }}</a></li>
-							<li><a class="main-color-2" href="{{ path('login') }}" title="{{ 'Log in on the website'|trans }}">{{ 'Log in'|trans }}</a></li>
-							<li><a class="main-color-2" href="{{ path('rules') }}" title="{{ 'Terms of service'|trans }}">{{ 'Terms of service'|trans }}</a></li>
-							<li><a class="main-color-2" href="{{ path('privacy_policy') }}" title="{{ 'Privacy policy'|trans }}">{{ 'Privacy policy'|trans }}</a></li>
-							<li><a class="main-color-2" href="{{ path('contact') }}" title="{{ 'Contact us'|trans }}">{{ 'Contact'|trans }}</a></li>
-							<li><a class="main-color-2" href="{{ path('info') }}" title="{{ 'Info about us'|trans }}">{{ 'Info'|trans }}</a></li>
-							{% if settings.enable_blog %}<li><a class="main-color-2" href="{{ path('blog') }}" title="{{ 'Blog'|trans }}">{{ 'Blog'|trans }}</a></li>{% endif %}
-							{% if settings.rss %}<li><a class="main-color-2" href="{{ path('feed') }}{% if pagination.page_url.page %}?{{ pagination.page_url.page }}{% endif %}" title="{{ 'RSS feed'|trans }}" target="_blank">{{ 'RSS feed'|trans }}</a></li>{% endif %}
+							<li class="mb-1"><a class="main-color-2" href="{{ settings.base_url }}" title="{{ settings.title }}">{{ 'Home'|trans }}</a></li>
+							<li class="mb-1"><a class="main-color-2" href="{{ path('add') }}" title="{{ 'Add classified'|trans }}">{{ 'Add classified'|trans }}</a></li>
+							<li class="mb-1"><a class="main-color-2" href="{{ path('classifieds') }}" title="{{ 'Search the best classifieds'|trans }}">{{ 'Classifieds'|trans }}</a></li>
+							<li class="mb-1"><a class="main-color-2" href="{{ path('my_classifieds') }}" title="{{ 'My classifieds'|trans }}">{{ 'My classifieds'|trans }}</a></li>
+							<li class="mb-1"><a class="main-color-2" href="{{ path('login') }}" title="{{ 'Log in on the website'|trans }}">{{ 'Log in'|trans }}</a></li>
+							<li class="mb-1"><a class="main-color-2" href="{{ path('rules') }}" title="{{ 'Terms of service'|trans }}">{{ 'Terms of service'|trans }}</a></li>
+							<li class="mb-1"><a class="main-color-2" href="{{ path('privacy_policy') }}" title="{{ 'Privacy policy'|trans }}">{{ 'Privacy policy'|trans }}</a></li>
+							<li class="mb-1"><a class="main-color-2" href="{{ path('contact') }}" title="{{ 'Contact us'|trans }}">{{ 'Contact'|trans }}</a></li>
+							<li class="mb-1"><a class="main-color-2" href="{{ path('info') }}" title="{{ 'Info about us'|trans }}">{{ 'Info'|trans }}</a></li>
+							{% if settings.enable_blog %}<li class="mb-1"><a class="main-color-2" href="{{ path('blog') }}" title="{{ 'Blog'|trans }}">{{ 'Blog'|trans }}</a></li>{% endif %}
+							{% if settings.rss %}<li class="mb-1"><a class="main-color-2" href="{{ path('feed') }}{% if pagination.page_url.page %}?{{ pagination.page_url.page }}{% endif %}" title="{{ 'RSS feed'|trans }}" target="_blank">{{ 'RSS feed'|trans }}</a></li>{% endif %}
 						</ul>
 						<br><br>
 					</div>
