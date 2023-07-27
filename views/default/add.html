@@ -7,15 +7,15 @@
 	<script src="js/ckeditor/ckeditor.js"></script>
 	<script src="js/jquery-sortable.js"></script>
 	<script>
-		var photo_max = {{ settings.photo_max|escape('js') }};
+		const photo_max = {{ settings.photo_max|escape('js') }};
 		var list_categories = list_options = [];
 		{% if classified %}
 			list_categories = {{ classified.categories|json_encode()|raw }};
 			{% if classified.options %}list_options = {{ classified.options|json_encode()|raw }}{% endif %};
 		{% endif %}
-		var required_category = "{{ settings.required_category|escape('js') }}";
-		var required_subcategory = "{{ settings.required_subcategory|escape('js') }}";
-		var lang = {'Photo limit exceeded':"{{ 'Photo limit exceeded'|trans }}"};
+		const required_category = "{{ settings.required_category|escape('js') }}";
+		const required_subcategory = "{{ settings.required_subcategory|escape('js') }}";
+		const lang = {'Photo limit exceeded':"{{ 'Photo limit exceeded'|trans }}"};
 	</script>
 	<script src="views/{{ settings.template }}/js/add.js?{{ settings.assets_version }}"></script>
 	{% if settings.google_maps %}
