@@ -37,6 +37,7 @@
 	{{ settings.code_head|raw }}
 </head>
 <body>
+	<div id="fb-root"></div>
 	<nav class="navbar fixed-top navbar-expand-md navbar-light" id="menu_box">
 		<a class="navbar-brand" href="{{ settings.base_url }}" title="{{ settings.title }}">{% if settings.logo %}<img src="{{ settings.logo }}" alt="{{ settings.title }}">{% else %}{{ settings.title }}{% endif %}</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,8 +77,6 @@
 			</ul>
 		</div>
 	</nav>
-
-	<div id="fb-root"></div>
 
 	{% block content %}
 
@@ -162,7 +161,7 @@
 	{% if settings.facebook_side_panel %}
 		<div id="facebook_side" class="d-none d-sm-block d-print-none">
 			<div id="facebook_side_image"><img src="{{ settings.base_url }}/views/{{ settings.template }}/images/facebook-side.png" alt="Facebook" width="10" height="21"></div>
-			<div class="fb-page" data-href="{{ settings.url_facebook }}" data-tabs="timeline" data-width="300" data-height="350" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="{{ settings.url_facebook }}" class="fb-xfbml-parse-ignore"><a href="{{ settings.url_facebook }}">Facebook</a></blockquote></div>
+			<div class="fb-page" data-href="{{ settings.url_facebook }}" data-show-posts="true" data-width="300" data-height="350" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="{{ settings.url_facebook }}" class="fb-xfbml-parse-ignore"><a href="{{ settings.url_facebook }}">Facebook</a></blockquote></div>
 		</div>
 	{% endif %}
 
