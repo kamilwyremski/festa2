@@ -1,14 +1,13 @@
 # Festa2
-Skrypt bazy noclegów Festa2
+Festa2 accommodation database script
 
-Demo skryptu: https:/festa2.itworksbetter.net/
+Demo: https:/festa2.itworksbetter.net/
 
-Opis: https://blog.wyremski.pl/skrypt-bazy-noclegow-festa2/
+Description: https://blog.wyremski.pl/skrypt-bazy-noclegow-festa2/
 
-Instrukcja: https://blog.wyremski.pl/instrukcja-instalacji-i-konfiguracji-skryptow/
+Instructions: https://blog.wyremski.pl/instrukcja-instalacji-i-konfiguracji-skryptow/
 
-Po skopiowaniu plików na serwer uruchom w konsoli 
+After copying the files to the server in the site directory, run the command to install the packages:
 ```
 composer install
 ```
-aby zainstalować niezbędne pakiety
