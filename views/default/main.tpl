@@ -22,11 +22,7 @@
 	{% if settings.favicon %}
 	<link rel="shortcut icon" href="{{ settings.favicon }}">{% endif %}
 	{% if settings.code_style %}<style>
-		{
-				{
-				settings.code_style|raw
-			}
-		}
+	{{ settings.code_style|raw }}
 	</style>{% endif %}
 	{% endblock %}
 
@@ -134,8 +130,7 @@
 								<div class="custom-control custom-checkbox">
 									<input type="checkbox" name="rules" class="custom-control-input" id="newsletter_rules" required {% if
 										newsletter_input.rules %}checked{% endif %}>
-									<label class="custom-control-label" for="newsletter_rules">{{ 'Accepts the terms and conditions and
-										the privacy policy'|trans }}</label>
+									<label class="custom-control-label" for="newsletter_rules">{{ 'Accepts the terms and conditions and the privacy policy'|trans }}</label>
 								</div>
 							</div>
 							<div class="form-group">
@@ -200,8 +195,7 @@
 
 	<div id="cookies-message" class="text-center d-print-none">
 		<div class="container"></div>{{ 'This site uses cookies, so that our service may work better.'|trans }} <a
-			href="javascript:closeCookiesWindow();" id="accept-cookies-checkbox" class="btn btn-outline-light btn-sm">{{ 'I
-			accept'|trans }}</a>
+			href="javascript:closeCookiesWindow();" id="accept-cookies-checkbox" class="btn btn-outline-light btn-sm">{{ 'I accept'|trans }}</a>
 	</div>
 	</div>
 
@@ -230,8 +224,7 @@
 					{{ settings.rodo_alert_text|raw }}
 				</div>
 				<div class="modal-footer">
-					<a href="javascript:closeRodoWindow();" class="btn btn-1">{{ 'I agree to the processing my personal
-						data'|trans }}</a>
+					<a href="javascript:closeRodoWindow();" class="btn btn-1">{{ 'I agree to the processing my personal data'|trans }}</a>
 				</div>
 			</div>
 		</div>
