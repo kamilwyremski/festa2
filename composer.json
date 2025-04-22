@@ -1,11 +1,11 @@
 {
     "type": "project",
     "license": "proprietary",
-	"name": "kamilwyremski/festa2",
-	"description": "Festa2 is a modern script that allows you to create a website with a base of accommodation",
-	"version": "2.3.3",
-	"homepage": "https://festa2.itworksbetter.net",
-	"authors": [
+    "name": "kamilwyremski/festa2",
+    "description": "Festa2 is a modern script that allows you to create a website with a base of accommodation",
+    "version": "2.3.4",
+    "homepage": "https://festa2.itworksbetter.net",
+    "authors": [
         {
             "name": "Kamil Wyremski",
             "email": "kamil@wyremski.pl",
@@ -13,7 +13,7 @@
             "role": "Developer"
         }
     ],
-	"support": {
+    "support": {
         "docs": "https://blog.wyremski.pl/skrypt-bazy-noclegow-festa2/"
     },
     "require": {
@@ -21,10 +21,12 @@
         "phpmailer/phpmailer": "~6.8.0",
         "ezyang/htmlpurifier": "~4.16.0"
     },
-	"autoload": {
-    "classmap": ["class/"],
-		"files": [
+    "autoload": {
+        "classmap": [
+            "class/"
+        ],
+        "files": [
             "php/global.php"
         ]
-	}
+    }
 }
