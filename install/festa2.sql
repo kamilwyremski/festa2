@@ -222,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `logs_mail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `receiver` varchar(64) NOT NULL,
   `action` varchar(32) NOT NULL,
-  `content` text NOT NULL,
+  `content` LONGTEXT NOT NULL,
   `ip` varchar(40) NOT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -559,7 +559,7 @@ INSERT INTO `settings` (`name`, `value`) VALUES
 ('photo_max_size', '0'),
 ('photo_max_width', '0'),
 ('photo_quality', '75'),
-('promote_cost', '2.46'),
+('promote_cost', '10'),
 ('promote_days', '30'),
 ('promote_only_by_author', '0'),
 ('recaptcha_secret_key', ''),

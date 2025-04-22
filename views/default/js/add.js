@@ -193,7 +193,7 @@ angular
         ) {
           selectCategory = "";
           if (list_categories.length) {
-            selectCategory = list_categories.shift();
+            selectCategory = String(list_categories.shift());
           }
           required = category_id ? required_subcategory : required_category;
           $scope.list_categories.push({
