@@ -190,8 +190,9 @@ class photo
 				$y = ($height - $width) / 2;
 				$smallestSide = $width;
 			}
-			$newwidth = $newheight = 500;
-			$tmp = imagecreatetruecolor($newwidth, $newheight - 200);
+			$newwidth = 500;
+			$newheight = 300;
+			$tmp = imagecreatetruecolor($newwidth, $newheight);
 			if ($path_parts['extension'] == "png") {
 				imagesavealpha($tmp, true);
 				$color = imagecolorallocatealpha($tmp, 0, 0, 0, 127);
