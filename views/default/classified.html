@@ -37,7 +37,7 @@
 					const marker = new google.maps.Marker({
 						position: myLatlng,
 						map: map,
-						title: '{{ classified.name }}'
+						title: '{{ classified.name|e('js') }}'
 					});
 					const content = '<div class="m-2"><p class="google_maps_p">{{ classified.name|slice(0,40) }}</p>{% if classified.photos %}<img src="upload/photos/{{ classified.photos[0].folder }}{{ classified.photos[0].thumb }}" alt="{{ classified.name }}" onerror="this.src=\'{{ settings.base_url }}/views/{{ settings.template }}/images/no_image.png\'" class="google_maps_img" loading="lazy">{% endif %}</div>';
 					const infowindow = new google.maps.InfoWindow();
